@@ -37,5 +37,14 @@ RSpec.describe User, type: :model do
     it 'has many inverse friendships' do
       expect { should has_many(inverse_friendships).with_foreign_key }
     end
+    it 'has many pending friendships' do
+      expect { should has_many(pending_friends).with_foreign_key }
+    end
+    it 'has many friendships requests' do
+      expect { should has_many(friend_requests).with_foreign_key }
+    end
+    it 'has many confirmed friendships' do
+      expect { should has_many(friends) }
+    end
   end
 end
