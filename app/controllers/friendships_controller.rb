@@ -10,7 +10,7 @@ class FriendshipsController < ApplicationController
 
   def index
     @users = User.all
-    @friends = current_user.friends.filter { |f| f != current_user }
+    @friends = current_user.friends.filter { |f| f != current_user }.uniq
     @pending_friends = current_user.pending_friends
     @friend_requests = current_user.friend_requests
   end

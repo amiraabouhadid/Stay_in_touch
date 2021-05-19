@@ -1,1 +1,13 @@
+<ul>
+  <% if !@pending_friends.include?@user and !@friend_requests.include?(@user) %>
+    <%= link_to 'Add friend', user_friendships_path(@user), method: :post, class: 'profile-link' %>
+  <% end %>
+  <% if @friend_requests.include?(@user) and !@friends.include?(@user) %>
+    <%= link_to 'Decline', friendship_path(@user), method: :delete %>
+    <%= link_to 'Accept', user_accept_friendships_path(@user) %>
+  <% end %>
+  <%if @friends.include?(@user) %>
+    <p>you are friends!</p>
+  <%end%>
 
+</ul>

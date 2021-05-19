@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
     @friends = current_user.friends.filter { |f| f != current_user }
     @pending_friends = current_user.pending_friends
+    @friend_requests = current_user.friend_requests
   end
 
   def show
