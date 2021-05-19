@@ -10,20 +10,26 @@ class FriendshipsController < ApplicationController
 
   def index
     @users = User.all
-    @friends = current_user.friends.filter { |f| f != current_user }.uniq
-    @pending_friends = current_user.pending_friends
-    @friend_requests = current_user.friend_requests
+    @user = User.find_by(id: params[:user_id])
+    @current_user_pending_friends = current_user.pending_friends.uniq
+    @current_user_friend_requests = current_user.friend_requests.uniq
+    @current_user_friends = current_user.friends.filter { |f| f if f != current_user and !@current_user_friend_requests.include?(f) and !@current_user_pending_friends.include?(f) }.uniq
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @user_friends = @user.friends.uniq
   end
 
   def destroy
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
     @friendship = current_user.inverse_friendships.find { |f| f.user == @user }
     @friendship.destroy
     redirect_to users_path, notice: 'friendship deleted'
   end
 
   def accept
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
     @friendship = current_user.inverse_friendships.find { |f| f.user == @user }
     @friendship.confirmed = true
     @friendship.save

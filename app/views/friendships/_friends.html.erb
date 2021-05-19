@@ -1,13 +1,24 @@
 <ul>
-  <% if !@pending_friends.include?@user and !@friend_requests.include?(@user) %>
+  <% if !current_user.pending_friends.include?@user and !current_user.friend_requests.include?(@user) and !current_user.friends.include?(@user) %>
+    <li>You are not friends</li>
     <%= link_to 'Add friend', user_friendships_path(@user), method: :post, class: 'profile-link' %>
-  <% end %>
-  <% if @friend_requests.include?(@user) and !@friends.include?(@user) %>
-    <%= link_to 'Decline', friendship_path(@user), method: :delete %>
-    <%= link_to 'Accept', user_accept_friendships_path(@user) %>
-  <% end %>
-  <%if @friends.include?(@user) %>
-    <p>you are friends!</p>
-  <%end%>
+<%end %>
+    <% if current_user.friend_requests.include?(@user) and !current_user.friends.include?(@user) %>
+      <%= "#{@user.name} sent you a friend request" %>
+      <br>
+      <%= link_to 'Decline', friendship_path(@user), method: :delete %>
+      <%= link_to 'Accept', user_accept_friendships_path(@user) %>
+<% end %>
+      <% if current_user.friends.include?(@user) and !current_user.friend_requests.include?(@user) and !current_user.pending_friends.include?(@user) %>
+        <%= "you and #{@user.name} are friends!"%>
 
-</ul>
+        <br>
+        <%end %>
+        <% if current_user.pending_friends.include?(@user) %>
+        <%= "waiting for #{@user.name} to accept your friendship request" %>
+          <br>
+        <% end %>
+        <%= "#{@user.name}'s friends:" %>
+        <%= link_to @user_friends_count, friendship_path(@user) %>
+
+      </ul>

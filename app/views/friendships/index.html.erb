@@ -1,12 +1,12 @@
 <article class="friends">
   <h3>Friends</h3>
   <ul class="friendships">
-    <h4>Friend Requests</h4>
-    <%= render @friend_requests %>
+    <h4>Incoming Friend Requests</h4>
+    <%= render @current_user_friend_requests %>
     <h4>Pending Friend Requests</h4>
-    <%= render @pending_friends %>
+    <%= render @current_user_pending_friends %>
     <h4>Friends List</h4>
-    <%= render @friends%>
+    <%= render @current_user_friends %>
   </ul>
 
 </article>
