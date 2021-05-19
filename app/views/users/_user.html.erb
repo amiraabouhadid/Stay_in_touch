@@ -1,13 +1,14 @@
 <li>
   Name: <%= user.name %>
   <span class="profile-link">
+    
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
     <% if !user.friend?(current_user) and !current_user.pending_friends.include?(user) and !user.pending_friends.include?(current_user) and user != current_user %>
       <%= link_to 'Add friend', user_friendships_path(user), method: :post, class: 'profile-link' %>
     <% end %>
     <% if current_user.friend_requests.include?(user) %>
-      <%= link_to 'Decline friend request', friendship_path(user), method: :delete %>
-      <%= link_to 'Accept friend request', user_accept_friendship_path(user) %>
+      <%= link_to 'Decline', friendship_path(user), method: :delete %>
+      <%= link_to 'Accept', user_accept_friendships_path(user) %>
     <% end %>
   </span>
 </li>

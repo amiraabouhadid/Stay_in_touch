@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create accept destroy]
-    get '/accept_friendship', to: 'friendship#accept'
+    get '/accept_friendships', to: 'friendships#accept'
   end
   resources :posts, only: %i[index create] do
     resources :comments, only: [:create]
