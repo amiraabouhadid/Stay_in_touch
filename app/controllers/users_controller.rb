@@ -16,4 +16,27 @@ class UsersController < ApplicationController
     @pending_friends = current_user.pending_friends
     @user_friends_count = @user.friends.uniq.count
   end
+
+  def friends
+    friends_array = friendships.map { |f| f.friend if f.confirmed } + inverse_friendships.map { |f| f.user if f.confirmed }
+    friends_array.compact
+  end
+
+  def pending_friends
+    friendships.map { |f| f.friend unless f.confirmed }.compact
+  end
+
+  def friend_requests
+    inverse_friendships.map { |f| f.user unless f.confirmed }.compact
+  end
+
+  def confirm_friend(user)
+    friendship = inverse_friendships.find { |f| f.user == user }
+    friendship.confirmed = true
+    friendship.save
+  end
+
+  def friend?(user)
+    friends.include?(user)
+  end
 end

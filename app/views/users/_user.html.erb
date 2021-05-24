@@ -4,7 +4,7 @@
   <span class="profile-link">
     <button type="button" name="See Profile"><%= link_to 'See Profile', user_path(user), class: 'profile-link' %></button>
 
-    <% if !user.friend?(current_user) and !current_user.pending_friends.include?(user) and !user.pending_friends.include?(current_user) and user != current_user %>
+    <% if !user.friends.include?(current_user) and !current_user.pending_friends.include?(user) and !user.pending_friends.include?(current_user) and user != current_user %>
       <button type="button" name="Add Friend">
         <%= link_to 'Add friend', user_friendships_path(user), method: :post, class: 'profile-link' %>
       </button>

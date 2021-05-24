@@ -11,9 +11,10 @@ class FriendshipsController < ApplicationController
   def index
     @users = User.all
     @user = User.find_by(id: params[:user_id])
-    @current_user_pending_friends = current_user.pending_friends.uniq
-    @current_user_friend_requests = current_user.friend_requests.uniq
-    @current_user_friends = current_user.friends.filter { |f| f if f != current_user and !@current_user_friend_requests.include?(f) and !@current_user_pending_friends.include?(f) }.uniq
+    @current_user_friends = current_user.friends
+    @current_user_friend_requests = current_user.friend_requests.filter { |f| !current_user.friends.include?(f) }.uniq
+
+    @current_user_pending_friends = current_user.pending_friends.filter { |f| !current_user.friends.include?(f) }.uniq
   end
 
   def show
