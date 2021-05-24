@@ -20,7 +20,9 @@ class PostsController < ApplicationController
   private
 
   def timeline_posts
-    @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
+    @posts ||= Post.all.ordered_by_most_recent.includes(:user)
+    @users = User.all
+    @timeline_posts ||= @posts.filter { |p| current_user.friends.include?(p.user) || p.user == current_user }
   end
 
   def post_params
