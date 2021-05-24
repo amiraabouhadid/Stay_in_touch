@@ -17,12 +17,17 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: localhost
+  username: postgres
+  password: jinx/99B
+
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+
   database: ror_social_scaffold_development
 
   # The specified database role being used to connect to postgres.
@@ -81,5 +86,5 @@ test:
 production:
   <<: *default
   database: ror_social_scaffold_production
-  username: ror_social_scaffold
-  password: <%= ENV['ROR_SOCIAL_SCAFFOLD_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: jinx/99B
