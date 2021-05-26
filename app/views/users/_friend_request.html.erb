@@ -2,7 +2,8 @@
 
   <b><%= friend.name %></b>
   <div class="friend-request-links ">
-    <%= link_to 'See Profile', user_path(friend), class: 'profile-link' %>
+    <button type="button" name="button" class="profile-button"><%= link_to 'See Profile', user_path(friend), class: 'profile-link' %></button>
+
 
     <div class='accept-form'>
       <%= form_with url: accept_friendship_path, method: :post do |form| %>
@@ -11,8 +12,8 @@
       <% end %>
     </div>
 
-    <button type="button" name="button">
-    <%= link_to 'Reject', reject_friendship_path(friend), class: 'btn btn-primary'  %>
+    <button type="button" name="button" class="profile-button">
+    <%= link_to 'Reject', reject_friendship_path(friend), class: 'profile-link'  %>
     </button>
   </div>
 </div>
