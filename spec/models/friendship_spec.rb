@@ -1,4 +1,4 @@
-  # rubocop: disable Lint/UselessAssignment
+# rubocop: disable Lint/UselessAssignment
 require 'rails_helper'
 RSpec.describe Friendship, type: :model do
   describe 'friendship associations' do
