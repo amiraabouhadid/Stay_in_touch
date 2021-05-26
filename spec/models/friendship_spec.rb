@@ -24,7 +24,7 @@ feature 'User can create new friendship' do
     click_on 'Log in'
 
     visit users_path
-    click_on 'Add Friend'
+    click_on 'Add'
     expect { should have_content('Request sent') }
   end
 end
@@ -41,7 +41,7 @@ feature 'User can accept friendship request' do
     click_on 'Log in'
 
     visit users_path
-    click_on 'Add Friend'
+    click_on 'Add'
     click_on 'Sign out'
 
     visit user_session_path
@@ -53,8 +53,8 @@ feature 'User can accept friendship request' do
     expect { should have_content('Accept') }
   end
 end
-feature 'User can decline friendship request' do
-  scenario 'user can decline friend request' do
+feature 'User can reject friendship request' do
+  scenario 'user can reject friend request' do
     user1 = User.create!(name: 'amira', password: '123456',
                          email: 'amira@gmail.com')
     user2 = User.create!(name: 'david', password: '123456',
@@ -66,7 +66,7 @@ feature 'User can decline friendship request' do
     click_on 'Log in'
 
     visit users_path
-    click_on 'Add Friend'
+    click_on 'Add'
     click_on 'Sign out'
 
     visit user_session_path
@@ -76,7 +76,7 @@ feature 'User can decline friendship request' do
 
     visit users_path
 
-    expect { should have_content('Decline') }
+    expect { should have_content('Reject') }
   end
 end
 # rubocop: enable Lint/UselessAssignment
