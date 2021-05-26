@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if current_user.reject_friend(params[:id])
       redirect_to user_path(current_user), notice: 'Friendship Request Declined'
     else
-      redirect_to user_path(current_user), alert: 'Request not completed. please try again.'
+      redirect_to user_path(current_user), alert: 'Something went wrong, try again later'
     end
   end
 end
