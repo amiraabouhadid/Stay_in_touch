@@ -1,0 +1,18 @@
+<div class="friend-request-container">
+
+  <b><%= friend.name %></b>
+  <div class="friend-request-links ">
+    <%= link_to 'See Profile', user_path(friend), class: 'link-control' %>
+
+    <div class='accept-form'>
+      <%= form_with url: accept_friendship_path, method: :post do |form| %>
+      <%= form.hidden_field :friend_id, value: friend.id %>
+      <%= form.submit 'Accept', class: 'btn' %>
+      <% end %>
+    </div>
+
+    <button type="button" name="button">
+    <%= link_to 'Reject', reject_friendship_path(friend), class: 'btn btn-danger p-3'  %>
+    </button>
+  </div>
+</div>

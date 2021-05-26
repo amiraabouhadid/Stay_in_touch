@@ -24,7 +24,7 @@ feature 'User can create new friendship' do
     click_on 'Log in'
 
     visit users_path
-    click_button 'Add Friend'
+    click_on 'Add Friend'
     expect { should have_content('Request sent') }
   end
 end
@@ -41,7 +41,7 @@ feature 'User can accept friendship request' do
     click_on 'Log in'
 
     visit users_path
-    click_button 'Add Friend'
+    click_on 'Add Friend'
     click_on 'Sign out'
 
     visit user_session_path
@@ -66,7 +66,7 @@ feature 'User can decline friendship request' do
     click_on 'Log in'
 
     visit users_path
-    click_button 'Add Friend'
+    click_on 'Add Friend'
     click_on 'Sign out'
 
     visit user_session_path

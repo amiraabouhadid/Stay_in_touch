@@ -1,0 +1,6 @@
+<div class='<%= class_name %>'>
+    <%= form_for(user.friend_requests.new, url: user_friendships_path(current_user)) do |form| %>
+    <%= form.hidden_field :invitee_id, value: user.id %>
+    <%= form.submit 'Add', class: 'btn p-5' %>
+    <% end %>
+</div>

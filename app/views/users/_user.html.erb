@@ -1,19 +1,8 @@
-<li>
-  Name:
-  <%= user.name %>
-  <span class="profile-link">
-    <button type="button" name="See Profile"><%= link_to 'See Profile', user_path(user), class: 'profile-link' %></button>
+<li class="user flex row flex-wrap">
+    Name: <%= user.name %>
+    <div class="profile-link">
+      <button type="button" name="button"><%= link_to 'See Profile',  user_path(user), class: 'profile-link' %></button>
+      <%= render_invite_link(current_user, user, "invite-friend-form") %>
+    </div>
 
-    <% if !user.friends.include?(current_user) and !current_user.pending_friends.include?(user) and !user.pending_friends.include?(current_user) and user != current_user %>
-      <button type="button" name="Add Friend">
-        <%= link_to 'Add friend', user_friendships_path(user), method: :post, class: 'profile-link' %>
-      </button>
-    <% end %>
-    <% if current_user.friend_requests.include?(user) and !current_user.friends.include?(user) and !current_user.pending_friends.include?(user) %>
-      <button type="button" name="Decline"><%= link_to 'Decline', friendship_path(user), method: :delete %></button>
-      <button type="button" name="Accept"><%= link_to 'Accept', user_accept_friendships_path(user) %></button>
-
-    <% end %>
-
-  </span>
 </li>

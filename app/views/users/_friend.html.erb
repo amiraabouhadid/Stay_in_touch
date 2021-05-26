@@ -1,0 +1,7 @@
+<div class="friend-container">
+  <b><%= friend.name %></b>
+  <div class="friends-links">
+    <button type="button" name="button"><%= link_to 'See Profile', user_path(friend), class: 'btn' %></button>
+    <button type="button" name="button"><%= link_to 'Remove', reject_friendship_path(friend), class: 'btn' %></button>
+  </div>
+</div>
