@@ -1,4 +1,4 @@
-# rubocop: disable Lint/UselessAssignment
+  # rubocop: disable Lint/UselessAssignment
 require 'rails_helper'
 RSpec.describe Friendship, type: :model do
   describe 'friendship associations' do
@@ -32,6 +32,7 @@ feature 'User can accept friendship request' do
   scenario 'user can accept friend request' do
     user1 = User.create!(name: 'amira', password: '123456',
                          email: 'amira@gmail.com')
+
     user2 = User.create!(name: 'david', password: '123456',
                          email: 'david@gmail.com')
 
