@@ -1,5 +1,11 @@
 module UsersHelper
-  def include_invite_link?(user1, user2)
+  def render_add_friend(user1, user2, class_name = nil)
+    return nil unless are_friends?(user1, user2)
+
+    render 'add_friend', user: user2, current_user: user1, class_name: class_name
+  end
+
+  def are_friends?(user1, user2)
     !(user1.id == user2.id || user1.friends.include?(user2))
   end
 
@@ -23,11 +29,5 @@ module UsersHelper
     return render 'empty_list', text: "you don't have any friends yet; start adding friends/accepting requests!" if friends.empty?
 
     safe_join(friends.map { |friend| render 'friend', friend: friend })
-  end
-
-  def render_invite_link(user1, user2, class_name = nil)
-    return nil unless include_invite_link?(user1, user2)
-
-    render 'add_friend', user: user2, current_user: user1, class_name: class_name
   end
 end

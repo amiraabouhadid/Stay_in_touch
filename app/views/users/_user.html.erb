@@ -3,7 +3,7 @@
 
     <div class="profile-link">
       <button type="button" name="button" class="profile-button"><%= link_to 'See Profile',  user_path(user), class: 'profile-link' %></button>
-      <%= render_invite_link(current_user, user, "invite-friend-form") %>
+      <%= render_add_friend(current_user, user, "add_friend") %>
     </div>
 
 </li>

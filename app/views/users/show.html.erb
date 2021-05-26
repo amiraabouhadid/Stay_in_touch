@@ -3,7 +3,7 @@
     <div>
       <%= gravatar_image_tag(@user.email, alt: 'Profile Picture', class: 'avatar avatar-sm') %>
     </div>
-    <%= render_invite_link(current_user, @user) %>
+    <%= render_add_friend(current_user, @user) %>
     <div class="user-page ">
         <div class="timeline">
             <h3>Recent posts:</h3>
