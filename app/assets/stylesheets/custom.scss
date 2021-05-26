@@ -286,9 +286,12 @@ form {
   }
 
   .profile-link {
-    font-size: 0.8em;
-    margin: 0 0 8px 0;
+    font-size: 1rem;
+    padding: 0 0 8px;
     color: $primary-color-dark;
+  }
+  .profile-button{
+    padding:0.5rem;
   }
 }
 
@@ -306,6 +309,7 @@ form {
     h3 {
       width: 100%;
     }
+
 
     justify-content: start;
   }

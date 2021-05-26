@@ -1,7 +1,8 @@
-<li class="user flex row flex-wrap">
-    Name: <%= user.name %>
+<li class="user-section">
+  <h3>Name: <%= user.name %></h3>
+
     <div class="profile-link">
-      <button type="button" name="button"><%= link_to 'See Profile',  user_path(user), class: 'profile-link' %></button>
+      <button type="button" name="button" class="profile-button"><%= link_to 'See Profile',  user_path(user), class: 'profile-link' %></button>
       <%= render_invite_link(current_user, user, "invite-friend-form") %>
     </div>
 

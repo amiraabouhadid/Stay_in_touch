@@ -2,7 +2,7 @@
 
   <b><%= friend.name %></b>
   <div class="friend-request-links ">
-    <%= link_to 'See Profile', user_path(friend), class: 'link-control' %>
+    <%= link_to 'See Profile', user_path(friend), class: 'profile-link' %>
 
     <div class='accept-form'>
       <%= form_with url: accept_friendship_path, method: :post do |form| %>
@@ -12,7 +12,7 @@
     </div>
 
     <button type="button" name="button">
-    <%= link_to 'Reject', reject_friendship_path(friend), class: 'btn btn-danger p-3'  %>
+    <%= link_to 'Reject', reject_friendship_path(friend), class: 'btn btn-primary'  %>
     </button>
   </div>
 </div>
