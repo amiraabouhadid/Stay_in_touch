@@ -51,8 +51,6 @@ end
 feature 'User can sign in' do
   scenario 'user can sign in' do
     user1 = User.create!(name: 'amira', password: '123456', email: 'amira@gmail.com')
-    user2 = User.create!(name: 'david', password: '123456', email: 'david@gmail.com')
-
     visit user_session_path
     fill_in 'user[email]', with: user1.email
     fill_in 'user[password]', with: user1.password
