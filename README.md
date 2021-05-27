@@ -3,7 +3,7 @@
 # RUBY ON RAILS PROJECT: STAY IN TOUCH
 
 A social app that allows users to add friends and to accept/reject friendship requests. Posts of friends are displayed on the timeline.   
-![Screenshot from 2021-05-27 19-03-16](https://user-images.githubusercontent.com/56790126/119867693-73f08a00-bf1e-11eb-92fa-1c728546b863.png)
+![Screenshot from 2021-05-27 19-09-11](https://user-images.githubusercontent.com/56790126/119868238-1577db80-bf1f-11eb-8504-4b9b10b5544e.png)
 ![Screenshot from 2021-05-27 19-03-22](https://user-images.githubusercontent.com/56790126/119867738-823ea600-bf1e-11eb-809d-472133291c41.png)
 ![Screenshot from 2021-05-27 19-03-35](https://user-images.githubusercontent.com/56790126/119867799-94204900-bf1e-11eb-8ff7-c774a8a26a2b.png)
 
