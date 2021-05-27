@@ -63,13 +63,6 @@ $ rails db:migrate
 $ rspec spec/models
 ```
 
-> To test all features, write the following in your terminal:
-
-```
-$ rspec spec/features
-```
-
-
 ## Usage
 
 Start server with:
