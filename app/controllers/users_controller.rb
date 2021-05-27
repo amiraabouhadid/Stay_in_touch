@@ -3,17 +3,28 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @friend_requests = current_user.friend_requests
-    @current_user_friends = current_user.friends.filter { |f| f if f != current_user and !@friend_requests.include?(f) and f != @user }.uniq
-    @pending_friends = current_user.pending_friends
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.ordered_by_most_recent
-    @friend_requests = current_user.friend_requests
-    @current_user_friends = current_user.friends.filter { |f| f if f != current_user and !@friend_requests.include?(f) and f != @user }.uniq
-    @pending_friends = current_user.pending_friends
-    @user_friends_count = @user.friends.uniq.count
+    @posts = @user.posts.includes(:user).ordered_by_most_recent
+  end
+
+  def accept_friendship
+    friendship = current_user.accept_friend(params[:friend_id])
+    if friendship
+      redirect_to user_path(current_user), notice: 'You are now friends!'
+    else
+      friendship.errors
+      redirect_to user_path(current_user), alert: 'Something went wrong, try again later'
+    end
+  end
+
+  def reject_friendship
+    if current_user.reject_friend(params[:id])
+      redirect_to user_path(current_user), notice: 'Friendship Request Declined'
+    else
+      redirect_to user_path(current_user), alert: 'Something went wrong, try again later'
+    end
   end
 end

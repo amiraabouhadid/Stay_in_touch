@@ -51,27 +51,24 @@ end
 feature 'User can sign in' do
   scenario 'user can sign in' do
     user1 = User.create!(name: 'amira', password: '123456', email: 'amira@gmail.com')
-    user2 = User.create!(name: 'david', password: '123456', email: 'david@gmail.com')
-
-    visit new_user_registration_path
-    fill_in 'user[name]', with: user1.name
-    fill_in 'user[email]', with: user1.email
-    fill_in 'user[password]', with: user1.password
-    fill_in 'user[password_confirmation]', with: user1.password
-    click_on 'Sign up'
-
-    visit new_user_registration_path
-    fill_in 'user[name]', with: user2.name
-    fill_in 'user[email]', with: user2.email
-    fill_in 'user[password]', with: user2.password
-    fill_in 'user[password_confirmation]', with: user2.password
-    click_on 'Sign up'
-
     visit user_session_path
     fill_in 'user[email]', with: user1.email
     fill_in 'user[password]', with: user1.password
     click_on 'Log in'
+    expect { should have_content('Signed in successfully.') }
+  end
+end
+feature 'User can sign up' do
+  scenario 'user can sign up' do
+    visit new_user_registration_path
+    user1 = ['amira', '123456', 'amira@gmail.com']
 
-    expect(page).to have_text 'Signed in successfully.'
+    fill_in 'user[name]', with: user1[0]
+    fill_in 'user[email]', with: user1[2]
+    fill_in 'user[password]', with: user1[1]
+    fill_in 'user[password_confirmation]', with: user1[1]
+    click_on 'Sign up'
+
+    expect { should have_content('Welcome! You have signed up successfully.') }
   end
 end
