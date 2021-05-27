@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: ror_social_scaffold_production
   username: postgres
   password: jinx/99B
