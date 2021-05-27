@@ -1,83 +1,61 @@
-# Scaffold for social media app with Ruby on Rails
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+# RUBY ON RAILS PROJECT: STAY IN TOUCH
+
+A social app that allows users to add friends and to accept/reject friendship requests. Posts of friends are displayed on the timeline.   
+
 
 ## Built With
-
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
-
+- Ruby
+- Ruby on rails
 
 ## Getting Started
-
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps:
+- Clone the repository as indicated by Setup section below
 
 ### Prerequisites
-
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Text editor
+- GitHub
+- Git
+- ruby
+- ruby on rails
 
 ### Setup
+Clone repository from github to your local drive by following these steps:
+- Go to the main page of the repository
+- Above the listed files, click the green Code button
+- You can clone the repository using:
+  - GitHub CLI: gh repo clone amiraabouhadid/Stay_in_touch.git.
+  - SSH:git clone git@github.com:amiraabouhadid/Stay_in_touch.git.
+  - HTTPS:git clone https://github.com/amiraabouhadid/Stay_in_touch.git.
+- Open Terminal
+- Change the current working directory to the location you want the cloned directory
+- Type one of the git clone commands listed above.
+- Press Enter to create your local clone
+- Open up the twitter clone on your localhost at http://localhost:3000/
+- Feel free to sign up or sign in and start posting!
 
-Instal gems with:
+### Install
+- Install Atom or Microsoft Visual Studio text editor to view the code on your local machine.
+- Install Git.
+- Install ruby
+- Install ruby on rails
 
-```
-bundle install
-```
+## AUTHORS
 
-Setup database with:
+**Amira Abouhadid**
 
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+- GitHub: [@amiraabouhadid](https://github.com/amiraabouhadid)
+- Twitter: [@AbouhadidAmira](https://twitter.com/AbouhadidAmira)
+- LinkedIn: [amira-abouhadid](https://linkedin.com/amira-abouhadid)
 
 
-### Usage
-
-Start server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
-
-## Authors
-
-TBA
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/amiraabouhadid/Stay_in_touch/issues).
 
 ## Show your support
 
@@ -85,9 +63,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
 
 ## 📝 License
 
-TBA
-
+- This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+- This project is [creativecommons](https://creativecommons.org/licenses/by-nc/4.0/) licensed.
