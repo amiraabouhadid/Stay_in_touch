@@ -4,13 +4,16 @@
 
 A social app that allows users to add friends and to accept/reject friendship requests. Posts of friends are displayed on the timeline.   
 
-# Live Demo
+## Live Demo
 
 [Live Demo Link](https://arcane-brook-55472.herokuapp.com/users/sign_in)
 
 ## Built With
 - Ruby
 - Ruby on rails
+- HTML5
+- SCSS
+- Javascript
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps:
@@ -36,7 +39,7 @@ Clone repository from github to your local drive by following these steps:
 - Type one of the git clone commands listed above.
 - Press Enter to create your local clone
 - Open up the twitter clone on your localhost at http://localhost:3000/
-- Feel free to sign up or sign in and start posting!
+- Feel free to sign up or sign in and start posting and adding friends!
 
 ### Install
 - Install Atom or Microsoft Visual Studio text editor to view the code on your local machine.
