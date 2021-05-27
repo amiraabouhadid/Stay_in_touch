@@ -53,7 +53,7 @@ Clone repository from github to your local drive by following these steps:
 
 - GitHub: [@amiraabouhadid](https://github.com/amiraabouhadid)
 - Twitter: [@AbouhadidAmira](https://twitter.com/AbouhadidAmira)
-- LinkedIn: [amira-abouhadid](https://linkedin.com/amira-abouhadid)
+- LinkedIn: [amira-abouhadid](https://www.linkedin.com/in/amira-abouhadid/)
 
 
 
