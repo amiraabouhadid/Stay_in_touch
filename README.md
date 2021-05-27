@@ -3,6 +3,10 @@
 # RUBY ON RAILS PROJECT: STAY IN TOUCH
 
 A social app that allows users to add friends and to accept/reject friendship requests. Posts of friends are displayed on the timeline.   
+![Screenshot from 2021-05-27 19-03-16](https://user-images.githubusercontent.com/56790126/119867693-73f08a00-bf1e-11eb-92fa-1c728546b863.png)
+![Screenshot from 2021-05-27 19-03-22](https://user-images.githubusercontent.com/56790126/119867738-823ea600-bf1e-11eb-809d-472133291c41.png)
+![Screenshot from 2021-05-27 19-03-35](https://user-images.githubusercontent.com/56790126/119867799-94204900-bf1e-11eb-8ff7-c774a8a26a2b.png)
+
 
 ## Live Demo
 
@@ -20,11 +24,11 @@ To get a local copy up and running follow these simple example steps:
 - Clone the repository as indicated by Setup section below
 
 ### Prerequisites
-- Text editor
 - GitHub
 - Git
-- ruby
-- ruby on rails
+- Ruby 2.7.2
+- Ruby on Rails 6.1.3.2
+- Rspec-rails
 
 ### Setup
 Clone repository from github to your local drive by following these steps:
@@ -34,18 +38,50 @@ Clone repository from github to your local drive by following these steps:
   - GitHub CLI: gh repo clone amiraabouhadid/Stay_in_touch.git.
   - SSH:git clone git@github.com:amiraabouhadid/Stay_in_touch.git.
   - HTTPS:git clone https://github.com/amiraabouhadid/Stay_in_touch.git.
-- Open Terminal
-- Change the current working directory to the location you want the cloned directory
+- Open Terminal.
+- Change the current working directory to the location you want the cloned directory.
 - Type one of the git clone commands listed above.
-- Press Enter to create your local clone
-- Open up the twitter clone on your localhost at http://localhost:3000/
-- Feel free to sign up or sign in and start posting and adding friends!
+- Press Enter to create your local clone.
+- Install gems with:
 
-### Install
-- Install Atom or Microsoft Visual Studio text editor to view the code on your local machine.
-- Install Git.
-- Install ruby
-- Install ruby on rails
+```
+$ bundle install
+```
+
+- Setup database with:
+
+```
+$ rails db:create
+$ rails db:migrate
+```
+
+## Testing
+
+> To test all models, write the following in your terminal:
+
+```
+$ rspec spec/models
+```
+
+> To test all features, write the following in your terminal:
+
+```
+$ rspec spec/features
+```
+
+
+## Usage
+
+Start server with:
+
+```
+$ rails s
+```
+
+ In your browser, navigate to:
+ ```
+ http://localhost:3000/
+ ```
 
 ## AUTHORS
 
