@@ -10,7 +10,7 @@ A social app that allows users to add friends and to accept/reject friendship re
 
 ## Live Demo
 
-[Live Demo Link](https://arcane-brook-55472.herokuapp.com/users/sign_in)
+[Live Demo Link](https://stay-in-touch-with-me.herokuapp.com/users/sign_in)
 
 ## Built With
 - Ruby
